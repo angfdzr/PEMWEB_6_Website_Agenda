@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MyBlog</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      /* Navbar Styling */
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #333;
+        padding: 10px 20px;
+      }
+
+      .navbar a {
+        color: white;
+        padding: 10px 15px;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+
+      .navbar a:hover {
+        background-color: #555;
+      }
+
+      /* Dropdown Menu */
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: white;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+      }
+
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+      }
+
+      .dropdown-content a:hover {
+        background-color: #f1f1f1;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .dropdown:hover .dropbtn {
+        background-color: #555;
+      }
+
+      /* Hero Section Styling */
+      .hero {
+        background: url('https://source.unsplash.com/random/1920x1080') no-repeat center center/cover;
+        height: 80vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgb(0, 0, 0);
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+      }
+
+      .hero p {
+        font-size: 1.5rem;
+      }
+
+      /* Container Styling */
+      .container {
+        margin: 20px;
+        text-align: center;
+      }
+
+      /* Footer Styling */
+      footer {
+        background-color: #333;
+        color: white;
+        padding: 20px 0;
+        text-align: center;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+      }
+
+      footer .social-links {
+        margin: 10px 0;
+      }
+
+      footer .social-links a {
+        color: white;
+        margin: 0 10px;
+        text-decoration: none;
+        font-size: 1.2rem;
+      }
+
+      footer p {
+        font-size: 0.9rem;
+        margin-top: 10px;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .hero h1 {
+          font-size: 2.5rem;
+        }
+
+        .hero p {
+          font-size: 1.2rem;
+        }
+
+        .navbar {
+          flex-direction: column;
+        }
+
+        .navbar a {
+          margin: 5px 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar Section -->
+    <div class="navbar">
+      <div>
+        <a href="#">MyBlog</a>
+        <a href="">Home</a>
+        <a href="/articles">Buat Agenda</a>
+      </div>
+      <div class="dropdown">
+        <a href="#" class="dropbtn"><%= user.username %></a>
+        <div class="dropdown-content">
+          <a href="/users">Manage Profil</a>
+          <a href="/logout">Logout</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero">
+      <div>
+        <h1>Welcome to MyBlog</h1>
+        <p>Share your thoughts, express your ideas, and inspire the world</p>
+      </div>
+    </div>
+
+    <!-- Welcome Section -->
+    <div class="container">
+      <h1>Welcome, <%= user.username %>!</h1>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+      <div class="social-links">
+        <a href="https://twitter.com">Twitter</a>
+        <a href="https://facebook.com">Facebook</a>
+        <a href="https://instagram.com">Instagram</a>
+      </div>
+      <p>&copy; 2024 MyBlog. All Rights Reserved.</p>
+    </footer>
+  </body>
+</html>
